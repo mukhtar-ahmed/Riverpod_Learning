@@ -12,7 +12,7 @@ class AutoDisposeFamilyPage extends StatelessWidget {
       body: Center(
         child: Consumer(
           builder: (context, ref, child) {
-            final value = ref.watch(autoDisposeFamilyHelloProvider("Mukhtar"));
+            final value = ref.watch(helloProvider(there: "Mukhtar"));
             return Text(value);
           },
         ),
