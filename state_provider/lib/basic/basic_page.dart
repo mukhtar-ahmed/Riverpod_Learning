@@ -7,7 +7,7 @@ class BasicPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final counterProvider = ref.watch(basicProvider);
+    final counterProvider = ref.watch(ageProvider);
     return Scaffold(
       appBar: AppBar(title: Text("Basic Page")),
       body: Center(child: Text("Counter: $counterProvider")),
