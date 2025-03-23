@@ -10,7 +10,7 @@ final basicProvider = StateProvider<int>((ref) {
 });
 
 @Riverpod(keepAlive: true)
-String age(ref) {
+String age(AgeRef ref) {
   ref.onDispose(() {
     print("Basic age State Provider Dispose");
   });
