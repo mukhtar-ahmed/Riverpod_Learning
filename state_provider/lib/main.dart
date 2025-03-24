@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:state_provider/auto_dispose/auto_dispose_page.dart';
 import 'package:state_provider/basic/basic_page.dart';
+import 'package:state_provider/family/family_page.dart';
 import 'package:state_provider/widget/custom_button.dart';
 
 void main() {
@@ -40,6 +42,16 @@ class HomePage extends StatelessWidget {
               CustomButton(
                 title: "Basic State Provider",
                 screenName: BasicPage(),
+              ),
+              SizedBox(height: 20),
+              CustomButton(
+                title: "Auto Dispose state Provider",
+                screenName: AutoDisposePage(),
+              ),
+              SizedBox(height: 20),
+              CustomButton(
+                title: "Family state Provider",
+                screenName: FamilyPage(),
               ),
             ],
           ),
