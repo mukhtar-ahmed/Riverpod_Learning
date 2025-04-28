@@ -1,16 +1,14 @@
-import 'package:flutter/foundation.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:future_provider/models/user.dart';
+import 'package:future_provider/providers/dio_provider.dart';
 
-part 'user.freezed.dart';
-part 'user.g.dart';
 
-@freezed
-class User with _$User {
-  const factory User({
-    required String id,
-    required String name,
-    required int age,
-  }) = _User;
-
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
-}
+final userListProvider = FutureProvider.autoDispose<List<User>>((ref) async {
+  ref.onDispose(() {
+    print("User lIST pROVIDER DISPOSE");
+  });
+  final response = await ref.watch(dioProvider).get('/users');
+  final List userList = response.data;
+  final users = [for (final user in userList) User.fromJson(user)];
+  return users;
+});
