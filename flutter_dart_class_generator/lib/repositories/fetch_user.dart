@@ -7,6 +7,7 @@ Future<List<User>> fetchUser() async {
       "https://jsonplaceholder.typicode.com/users",
     );
     print(response);
+    
     final List userList = response.data;
     final users = [for (final user in userList) User.fromMap(user)];
     print(users[0]);
