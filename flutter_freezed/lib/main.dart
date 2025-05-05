@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_freezed/pages/collection_screen.dart';
+import 'package:flutter_freezed/pages/hote_screen.dart';
 import 'package:flutter_freezed/pages/method_screen.dart';
 import 'package:flutter_freezed/pages/mutable_person_screen.dart';
 import 'package:flutter_freezed/pages/person_screen.dart';
@@ -43,6 +44,7 @@ class HomeScreen extends StatelessWidget {
             ),
             CustomButton(screen: CollectionScreen(), title: "Collection"),
             CustomButton(screen: MethodScreen(), title: "Method"),
+            CustomButton(screen: HoteScreen(), title: "Hotel"),
           ],
         ),
       ),
