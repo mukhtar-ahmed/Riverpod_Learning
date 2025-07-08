@@ -1,3 +1,4 @@
+import 'package:async_notifier_provider/pages/async_activity/async_activity_page.dart';
 import 'package:async_notifier_provider/pages/counter/counter_page.dart';
 import 'package:async_notifier_provider/widget/custom_button.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,10 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: ListView(
           shrinkWrap: true,
-          children: [CustomButton(title: "Counter", screen: CounterPage())],
+          children: [
+            CustomButton(title: "Counter", screen: CounterPage()),
+            CustomButton(title: "Async Activity", screen: AsyncActivityPage()),
+          ],
         ),
       ),
     );
